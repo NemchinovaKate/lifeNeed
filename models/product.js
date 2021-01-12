@@ -85,35 +85,35 @@ class Product {
 
 module.exports = Product*/
 
-const {Schema,model} = require('mongoose')
+const { Schema, model } = require('mongoose')
 const product = new Schema({
     title: {
-        type:String,
-        required:true
+        type: String,
+        required: true,
     },
-    price:{
-        type:Number,
-        required:true
+    price: {
+        type: Number,
+        required: true,
     },
-    img:{
-        type:String,
-        required:true
+    img: {
+        type: String,
+        required: true,
     },
-    description:{
-        type:String,
-        required:true
+    description: {
+        type: String,
+        required: true,
     },
-    userId:{
-        type:Schema.Types.ObjectId,
-        ref:'User'
-    }
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+    },
 })
 
-product.method('toClient',function(){
+product.method('toClient', function () {
     const product = this.toObject()
     product.id = product._id
     delete product._id
     return product
 })
 
-module.exports = model('Product',product)
+module.exports = model('Product', product)

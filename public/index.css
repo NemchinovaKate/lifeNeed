@@ -1,13 +1,13 @@
-.nav-wrapper{
+.nav-wrapper {
     padding: 0 2rem;
 }
 
-.price{
+.price {
     font-size: 2rem;
 }
 
-.product{
-    width:100%;
+.product {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,43 +17,86 @@
     margin-bottom: 2rem;
 }
 
-.product img{
+.product img {
     max-width: 400px;
     height: auto;
 }
 
-.product .price.big{
+.product .price.big {
     font-size: 2.5rem;
 }
-/**/ .description{
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+/**/
+.description {
     margin-right: 15%;
     margin-left: 15%;
     text-indent: 25px;
 }
 
-.card-action.actions{
+.card-action.actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.product-form{
-    margin-bottom:2rem;
+.product-form {
+    margin-bottom: 2rem;
 }
-.auth{
+.auth {
     padding-top: 1rem;
 }
-.alert{
-    padding: .5rem 1rem;
-    border-radius:10px ;
+.alert {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
     text-align: center;
     margin-bottom: 1rem;
-    background: rgba(255,0,0,.3);
-    color:red;
-
+    background: rgba(255, 0, 0, 0.3);
+    color: red;
 }
 
-.avatar{
-    max-width:300px ;
+.avatar {
+    max-width: 300px;
     height: auto;
+}
+
+.my-card {
+    position: relative;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #fff;
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+}
+.my-card-image {
+    flex-basis: 45%;
+    margin-right: 2%;
+}
+.my-card-image img {
+    max-height: 100%;
+    max-width: 100%;
+}
+.my-card-content {
+    flex-basis: 50%;
+}
+.my-card-title {
+    font-size: 1.5rem;
+}
+.my-card-action {
+    width: 100%;
+}
+.my-card-action.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
