@@ -1,7 +1,7 @@
-<h1>Корзина</h1>
+<h1 class="title">Корзина</h1>
 
 <div id="card">
-{{#if products.length}}
+    {{#if products.length}}
     <table>
         <thead>
             <th>Название</th>
@@ -14,10 +14,8 @@
                 <td>{{title}}</td>
                 <td>{{count}}</td>
                 <td>
-                    <button class="btn btn-small js-remove" 
-                    data-id="{{id}}"
-                    data-csrf="{{@root.csrf}}"
-                    >Удалить</button>
+                    <button class="my-card-btn my-card-action-btn-primary my-btn-small js-remove" data-id="{{id}}"
+                        data-csrf="{{@root.csrf}}">Удалить</button>
                 </td>
             </tr>
             {{/each}}
@@ -25,11 +23,11 @@
     </table>
     <p><strong>Цена: </strong><span class="price">{{price}}</span></p>
     <form action="/orders" method="POST">
-    <input type="hidden" name="_csrf" value="{{csrf}}">
-        <button type="submit" class="btn">Сделать заказ</button>
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+        <button type="submit" class="my-card-btn my-card-action-btn-primary">Сделать заказ</button>
     </form>
-{{else}}
+    {{else}}
     <p>Корзина пуста</p>
-{{/if}}
+    {{/if}}
 
 </div>

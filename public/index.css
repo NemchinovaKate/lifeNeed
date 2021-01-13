@@ -1,9 +1,23 @@
+.wrapper {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex-grow: 1;
+}
+
 .nav-wrapper {
     padding: 0 2rem;
 }
 
 .price {
-    font-size: 2rem;
+    font-size: 1.7rem;
+    margin: 15px;
+    color: #43a047;
 }
 
 .product {
@@ -26,8 +40,9 @@
     font-size: 2.5rem;
 }
 .title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-align: center;
+    font-weight: bold;
 }
 /**/
 .description {
@@ -73,7 +88,7 @@
     border-radius: 6px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
         0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     flex-wrap: wrap;
@@ -88,8 +103,12 @@
 }
 .my-card-content {
     flex-basis: 50%;
+    margin-right: 2%;
+    margin-left: 1%;
 }
 .my-card-title {
+    display: block;
+    margin-top: 15px;
     font-size: 1.5rem;
 }
 .my-card-action {
@@ -98,5 +117,72 @@
 .my-card-action.actions {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+}
+.my-card-action form {
+    display: flex;
+    flex-basis: 40%;
+}
+.my-card-btn {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 5px 10px 20px;
+    border-radius: 12px;
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.my-card-action-btn {
+    border: 1px solid #43a047;
+    color: #43a047;
+    transition: all 0.3s ease-in;
+}
+.my-btn-small {
+    margin: 0;
+    padding: 5px 15px;
+}
+.my-card-action-btn:hover {
+    color: #fff;
+    background-color: #43a047;
+}
+.my-card-action-btn-primary {
+    border: 1px solid #26a69a;
+    color: #26a69a;
+    transition: all 0.3s ease-in;
+    flex-basis: 100%;
+}
+.my-card-action-btn-primary:hover {
+    color: #fff;
+    background-color: #26a69a;
+}
+.my-card-action-btn-red {
+    border: 1px solid#f44336;
+    color: #f44336;
+    transition: all 0.3s ease-in;
+    flex-basis: 100%;
+}
+.my-card-action-btn-red:hover {
+    color: #fff;
+    background-color: #f44336;
+}
+
+.flex-container {
+    display: flex;
     justify-content: space-between;
+}
+.price-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.my-description {
+    text-align: justify;
+}
+
+.carousel {
+    background: #43a047;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #ffe5b4, #f9c5f7);
 }

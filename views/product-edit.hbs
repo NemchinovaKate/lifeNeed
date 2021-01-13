@@ -1,35 +1,36 @@
 <h1>Редактировать {{product.title}}</h1>
 
 <form action="/catalog/edit" method="POST" class="product-form">
-        <div class="input-field ">
-          <input  id="title" name="title" type="text" class="validate" required value="{{product.title}}">
-          <label for="title">Название товара</label>
-           <span class="helper-text" data-error="Введите название"></span>
-        
-        </div>
-        <div class="input-field ">
-          <input  id="price" name="price" type="number" class="validate" required min="1" value="{{product.price}}">
-          <label for="price">Цена товара</label>
-          <span class="helper-text" data-error="Введите цену"></span>
-        </div>
-        <div class="input-field ">
-          <input  id="img" name="img" type="text" class="validate" required value="{{product.img}}">
-          <label for="img">URL картинки</label>
-           <span class="helper-text" data-error="Введите url картинки"></span>
-        </div>
-        <div class="input-field">
-          <textarea id="description" name="description" class="materialize-textarea" required >{{product.description}}</textarea>
-          <label for="description">Описание товара</label>
-           <span class="helper-text" data-error="Введите описание"></span>
-        </div>
-        <input type="hidden" name="id" value="{{product.id}}">
+    <div class="input-field ">
+        <input id="title" name="title" type="text" class="validate" required value="{{product.title}}">
+        <label for="title">Название товара</label>
+        <span class="helper-text" data-error="Введите название"></span>
 
-        <input type="hidden" name="_csrf" value="{{csrf}}">
-        <button type="submit" class="btn btn-primary">Редактировать товар</button>
+    </div>
+    <div class="input-field ">
+        <input id="price" name="price" type="number" class="validate" required min="1" value="{{product.price}}">
+        <label for="price">Цена товара</label>
+        <span class="helper-text" data-error="Введите цену"></span>
+    </div>
+    <div class="input-field ">
+        <input id="img" name="img" type="text" class="validate" required value="{{product.img}}">
+        <label for="img">URL картинки</label>
+        <span class="helper-text" data-error="Введите url картинки"></span>
+    </div>
+    <div class="input-field">
+        <textarea id="description" name="description" class="materialize-textarea"
+            required>{{product.description}}</textarea>
+        <label for="description">Описание товара</label>
+        <span class="helper-text" data-error="Введите описание"></span>
+    </div>
+    <input type="hidden" name="id" value="{{product.id}}">
+
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+    <button type="submit" class="my-card-btn my-card-action-btn-primary">Редактировать товар</button>
 </form>
 
 <form action="/catalog/remove" method="POST">
-      <input type="hidden" name="id" value="{{product.id}}">
-      <input type="hidden" name="_csrf" value="{{csrf}}">
-      <button class="btn red">Удалить продукт</button>
+    <input type="hidden" name="id" value="{{product.id}}">
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+    <button class="my-card-btn my-card-action-btn-red">Удалить продукт</button>
 </form>

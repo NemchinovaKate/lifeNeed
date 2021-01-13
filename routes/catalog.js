@@ -2,6 +2,7 @@ const { Router } = require('express')
 const Product = require('../models/product')
 const router = Router()
 const auth = require('../middleware/auth')
+const admin = require('../middleware/admin')
 const { productValidators } = require('../utils/validators')
 const { validationResult } = require('express-validator/check')
 
@@ -34,50 +35,45 @@ router.get('/', async (req, res) => {
     */
 })
 
-router.post('/remove', auth, async (req, res) => {
+router.post('/remove', admin, async (req, res) => {
     try {
         await Product.deleteOne({
             _id: req.body.id,
             userId: req.user._id,
         })
-        res.redirect('/catalog')
+        res.redirect('/admin')
     } catch (e) {
         console.log(e)
     }
 })
 
-router.post('/edit', auth, productValidators, async (req, res) => {
+router.post('/edit', admin, productValidators, async (req, res) => {
     const errors = validationResult(req)
     const { id } = req.body
     if (!errors.isEmpty) {
         return res.status(422).redirect(`/catalog/${id}/edit?allow=true`)
     }
     try {
-        const { id } = req.body
         delete req.body.id
         const product = await Product.findById(id)
-        if (!isOwner(product, req)) {
-            return res.redirect('/catalog')
-        }
-        Object.length.assign(product, req.body)
+        Object.assign(product, req.body)
         await product.save()
-        res.redirect('/catalog')
+        res.redirect('/admin')
     } catch (e) {
         console.log(e)
     }
 })
 
-router.get('/:id/edit', auth, async (req, res) => {
+router.get('/:id/edit', admin, async (req, res) => {
     if (!req.query.allow) {
         return res.redirect('/')
     }
 
     try {
         const product = await Product.findById(req.params.id)
-        if (!isOwner(product, req)) {
-            return res.redirect('/products')
-        }
         res.render('product-edit', {
+            layout: 'admin',
+            isAdmin: req.user.role === 'admin',
             title: 'Редактировать ${product.title}',
             product,
         })
@@ -91,7 +87,7 @@ router.get('/:id', async (req, res) => {
     try {
         const product = await Product.findById(req.params.id)
         res.render('product', {
-            layout: 'empty',
+            layout: 'main',
             title: `Товар ${product.title}`,
             product,
         })

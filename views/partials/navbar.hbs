@@ -1,39 +1,29 @@
-  <nav>
+<nav class="green darken-1">
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo">IQuber</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-       {{#if isHome}}
-        <li class="active">
-            <a href="/">Главная</a>
-        </li>
-        {{else}}
-        <li>
-            <a href="/">Главная</a>
-        </li>
-        {{/if}}
-
-        {{#if isCatalog}}
-        <li class="active">
-            <a href="/catalog">Каталог</a>
-        </li>
-        {{else}}
-        <li>
-            <a href="/catalog">Каталог</a>
-        </li>
-        {{/if}}
-
-        {{#if isAuth}}
-            {{#if isAdd}}
+        <a href="/" class="brand-logo">IQuber</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if isHome}}
             <li class="active">
-                <a href="/add">Добавить товар</a>
+                <a href="/">Главная</a>
             </li>
             {{else}}
             <li>
-                <a href="/add">Добавить товар</a>
+                <a href="/">Главная</a>
             </li>
             {{/if}}
 
-             {{#if isProfile}}
+            {{#if isCatalog}}
+            <li class="active">
+                <a href="/catalog">Каталог</a>
+            </li>
+            {{else}}
+            <li>
+                <a href="/catalog">Каталог</a>
+            </li>
+            {{/if}}
+
+            {{#if isAuth}}
+            {{#if isProfile}}
             <li class="active">
                 <a href="/profile">Профиль</a>
             </li>
@@ -43,7 +33,7 @@
             </li>
             {{/if}}
 
-             {{#if isCard}}
+            {{#if isCard}}
             <li class="active">
                 <a href="/card">Корзина</a>
             </li>
@@ -52,7 +42,7 @@
                 <a href="/card">Корзина</a>
             </li>
             {{/if}}
-            
+
             {{#if isOrder}}
             <li class="active">
                 <a href="/orders">Заказы</a>
@@ -63,11 +53,11 @@
             </li>
             {{/if}}
 
-             <li>
+            <li>
                 <a href="/auth/logout">Выйти</a>
             </li>
 
-        {{else}}
+            {{else}}
             {{#if isLogin}}
             <li class="active">
                 <a href="/auth/login#login">Войти</a>
@@ -77,7 +67,7 @@
                 <a href="/auth/login#login">Войти</a>
             </li>
             {{/if}}
-        {{/if}}    
-      </ul>
+            {{/if}}
+        </ul>
     </div>
-  </nav>
+</nav>

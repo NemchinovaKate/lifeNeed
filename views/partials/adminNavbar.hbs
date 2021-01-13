@@ -1,0 +1,42 @@
+<nav class="green darken-1">
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">IQuber</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if isHome}}
+            <li class="active">
+                <a href="/">Главная</a>
+            </li>
+            {{else}}
+            <li>
+                <a href="/">Главная</a>
+            </li>
+            {{/if}}
+
+            {{#if isAdmin}}
+            {{#if isCatalog}}
+            <li class="active">
+                <a href="/admin">Каталог</a>
+            </li>
+            {{else}}
+            <li>
+                <a href="/admin">Каталог</a>
+            </li>
+            {{/if}}
+
+            {{#if isAdd}}
+            <li class="active">
+                <a href="/admin/add">Добавить товар</a>
+            </li>
+            {{else}}
+            <li>
+                <a href="/admin/add">Добавить товар</a>
+            </li>
+            {{/if}}
+
+            <li>
+                <a href="/auth/logout">Выйти</a>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
