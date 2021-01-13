@@ -1,16 +1,18 @@
 <h1 class="title">Мои заказы</h1>
 
 {{#if orders.length}}
-{{#each orders}}
-<div class="row">
-    <div class="col s6 offset-s3">
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title">
+<div class="my-row">
+    {{#each orders}}
+    <div class="my-col-s6">
+        <div class="card flex-card">
+            <div class="card-content flex-content">
+                <span class="card-title bold">
                     Заказ <small>{{_id}}</small>
                 </span>
-                <p class="date">Дата: {{date}} </p>
-                <p><em>{{user.userId.name}}</em>{{user.userId.email}}</p>
+                <p class="flex-row-sb"><span class="my-col-s4">Дата заказа:</span> <em class="date">{{date}}</em> </p>
+                <p class="flex-row-sb"><span class="my-col-s4">Никнайм:</span> <em>{{user.userId.name}}</em></p>
+                <p class="flex-row-sb"><span class="my-col-s4">Email:</span> <em>{{user.userId.email}}</em></p>
+                <p>Список товаров:</p>
                 <ol>
                     {{#each products}}
                     <li>
@@ -18,13 +20,14 @@
                     </li>
                     {{/each}}
                 </ol>
-                <hr>
+                <div class="hr green darken-1"></div>
                 <p>Цена: <span class="price">{{price}}</span></p>
             </div>
         </div>
     </div>
+    {{/each}}
 </div>
-{{/each}}
+
 
 {{else}}
 <p>Заказов пока нет</p>

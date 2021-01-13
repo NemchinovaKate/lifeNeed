@@ -1,10 +1,10 @@
-<h1>Добавить товар</h1>
+<h1 class="title">Добавить товар</h1>
 
 {{#if error}}
 <p class="alert">{{error}}</p>
 {{/if}}
 
-<form action="/add" method="POST">
+<form class="form" action="/add" method="POST">
     <div class="input-field ">
         <input id="title" name="title" type="text" class="validate" required value="{{data.title}}">
         <label for="title">Название товара</label>

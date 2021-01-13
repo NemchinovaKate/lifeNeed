@@ -1,6 +1,6 @@
-<h1>Редактировать {{product.title}}</h1>
+<h1 class="title">Редактировать {{product.title}}</h1>
 
-<form action="/catalog/edit" method="POST" class="product-form">
+<form class="form" action="/catalog/edit" method="POST" class="product-form">
     <div class="input-field ">
         <input id="title" name="title" type="text" class="validate" required value="{{product.title}}">
         <label for="title">Название товара</label>
@@ -27,10 +27,9 @@
 
     <input type="hidden" name="_csrf" value="{{csrf}}">
     <button type="submit" class="my-card-btn my-card-action-btn-primary">Редактировать товар</button>
-</form>
-
-<form action="/catalog/remove" method="POST">
-    <input type="hidden" name="id" value="{{product.id}}">
-    <input type="hidden" name="_csrf" value="{{csrf}}">
-    <button class="my-card-btn my-card-action-btn-red">Удалить продукт</button>
+    <form action="/catalog/remove" method="POST">
+        <input type="hidden" name="id" value="{{product.id}}">
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+        <button class="my-card-btn my-card-action-btn-red">Удалить продукт</button>
+    </form>
 </form>
