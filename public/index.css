@@ -10,6 +10,23 @@
     flex-grow: 1;
 }
 
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    background-color: rgb(67 160 71 / 19%);
+}
+.tabs .tab a.active {
+    color: #43a047;
+}
+.tabs .tab a {
+    color: rgb(67 160 71 / 0.7);
+}
+.tabs .tab a:hover {
+    color: #ee6e73;
+}
+.tabs .indicator {
+    background-color: #43a04799;
+}
+
 .nav-wrapper {
     padding: 0 2rem;
 }
@@ -96,6 +113,8 @@
 .my-card-image {
     flex-basis: 45%;
     margin-right: 2%;
+    margin-left: 1%;
+    margin-top: 10px;
 }
 .my-card-image img {
     max-height: 100%;
@@ -103,8 +122,7 @@
 }
 .my-card-content {
     flex-basis: 50%;
-    margin-right: 2%;
-    margin-left: 1%;
+    margin-right: 2%;\
 }
 .my-card-title {
     display: block;
@@ -118,6 +136,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    align-items: flex-end;
 }
 .my-card-action form {
     display: flex;
