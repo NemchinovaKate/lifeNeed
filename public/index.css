@@ -113,16 +113,16 @@
 .my-card-image {
     flex-basis: 45%;
     margin-right: 2%;
-    margin-left: 1%;
-    margin-top: 10px;
+    margin-left: 3%;
+    margin-top: 20px;
 }
 .my-card-image img {
     max-height: 100%;
     max-width: 100%;
 }
 .my-card-content {
-    flex-basis: 50%;
-    margin-right: 2%;\
+    flex-basis: 48%;
+    margin-right: 2%;
 }
 .my-card-title {
     display: block;
