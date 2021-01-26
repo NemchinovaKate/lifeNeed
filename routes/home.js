@@ -4,8 +4,6 @@ const router = Router()
 
 router.get('/', async (req, res) => {
     let products = await Product.find().select('title img').limit(8)
-    const newProduct = products.concat(products)
-    products = newProduct.concat(newProduct)
     res.render('index', {
         title: 'Главная страница',
         isHome: true,

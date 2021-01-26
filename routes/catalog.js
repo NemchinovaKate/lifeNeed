@@ -15,9 +15,6 @@ router.get('/', async (req, res) => {
         let products = await Product.find()
             .populate('userId', 'email name')
             .select('price title img')
-        const newProduct = products.concat(products)
-        const finalProduct = newProduct.concat(newProduct)
-        products = finalProduct.concat(finalProduct)
         res.render('catalog', {
             title: 'Каталог',
             isCatalog: true,
